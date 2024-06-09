@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.allimages{
+    display: flex;
+    justify-content: center;
+}

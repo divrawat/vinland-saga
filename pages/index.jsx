@@ -1,4 +1,6 @@
 import { DOMAIN } from "@/config";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const chapters = Array.from({ length: 211 }, (_, i) => ({
@@ -7,16 +9,23 @@ export default function Home() {
   })).reverse();
 
   return (
-    <div className="mt-10 flex flex-wrap justify-center gap-4">
-      <div>
+    <>
+      <Navbar />
+
+      <div className="mt-10 max-w-[1100px] mx-auto px-5 flex flex-wrap justify-center">
+
         {chapters.map((chapter) => (
-          <a href={chapter.url} key={chapter.number} className="p-10">
-            <p className="w-[300px] text-center p-5 border border-gray-300 border-l-8 border-l-blue-500 font-bold">
-              Vinland Saga, Chapter {chapter.number}
-            </p>
-          </a>
+          <div className="flex hover:scale-105 active:scale-95 transition-transform" key={chapter.number}>
+            <a href={chapter.url} className="p-5">
+              <p className="w-[300px] text-center p-5 border border-l-8 border-[black] font-bold">
+                Vinland Saga, Chapter {chapter.number}
+              </p>
+            </a>
+          </div>
         ))}
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 }
