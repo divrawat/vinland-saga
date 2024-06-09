@@ -15,6 +15,8 @@ export default function Chapter() {
     const chapterData = chaptersData.find(chapter => chapter.chapterNumber === parseInt(chapterNumber));
     const numImages = chapterData ? chapterData.numImages : 0;
 
+
+
     const getImageUrls = (chapterNumber, numImages) => {
         const imageUrls = [];
         const chapterImagesFolder = `/images/vinland-saga/chapter-${chapterNumber}`;
@@ -37,7 +39,7 @@ export default function Chapter() {
             <div className='max-w-[1200px] mx-auto my-10'>
                 {imageUrls.map((imageUrl, index) => (
                     <div className='flex justify-center' key={index}>
-                        <Image width={700} height={600} className='border p-5' src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
+                        <img width={700} height={600} className='border p-5' src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
                     </div>
                 ))}
             </div>
