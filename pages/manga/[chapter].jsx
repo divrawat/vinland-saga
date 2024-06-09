@@ -32,9 +32,9 @@ export default function Chapter() {
 
     return (
         <>
-            <div className="mt-10 flex justify-center">
-                <h1 className="text-3xl font-bold">Vinland Saga Chapter {chapterNumber}</h1>
-            </div>
+
+            <h1 className="text-3xl font-bold text-center p-5">Vinland Saga Chapter {chapterNumber}</h1>
+
 
             <div className='max-w-[1200px] mx-auto my-10'>
                 {imageUrls.map((imageUrl, index) => (
