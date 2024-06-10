@@ -33,7 +33,7 @@ export default function Navbar() {
                     <ul id="menu" ref={menuRef} className="md:flex md:space-x-10 md:pb-0 pb-4 items-center font-bold  text-center leading-[3] hidden">
                         {navLinks.map((link, index) => (
                             <li key={index}>
-                                <Link href={link.href} className="hover:text-[#a5a5f3]  hover:underline">{link.text}</Link>
+                                <Link href={link.href} className="hover:text-[#a5a5f3] md:pr-3  hover:underline">{link.text}</Link>
                             </li>
                         ))}
                     </ul>

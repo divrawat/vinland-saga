@@ -1,10 +1,21 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-
+import Head from "next/head";
 
 const Contact = () => {
+
+    const head = () => (
+        <Head>
+            <title>Contact</title>
+            <meta name="robots" content="noindex, follow, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+            <meta property="og:url" content={`${DOMAIN}/contact`} />
+        </Head >
+    );
+
+
     return (
         <>
+            {head()}
             <Navbar />
             <div className="max-w-[1000px] mx-auto p-5">
                 <h1 className="text-center font-bold text-3xl my-8">Contact</h1>

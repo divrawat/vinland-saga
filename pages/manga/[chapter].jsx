@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
 import { APP_NAME, DOMAIN, MANGA_NAME } from '@/config';
+import DisqusComments from '@/components/DisQus';
 
 export default function Chapter({ chapterNumber, imageUrls, totalChapters, params, errorcode }) {
 
@@ -26,8 +26,9 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
     const DESCRIPTION = `You are currently enjoying reading ${MANGA_NAME} chapter ${chapterNumber} online at ${DOMAIN}.`
     const URL = params.chapter;
     const currentDate = new Date();
-    const dateModified = currentDate.toISOString();
-    const datePublished = new Date(currentDate.getTime() - (5 * 24 * 60 * 60 * 1000)).toISOString();
+    const dateModified = new Date(currentDate.getTime() - (2 * 24 * 60 * 60 * 1000)).toISOString();
+    const datePublished = new Date(currentDate.getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString();
+
 
     const schema =
     {
@@ -71,11 +72,9 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             <meta property="og:image" content={`${DOMAIN}/images/vinland-saga/chapter-${chapterNumber}/1.webp`} />
             <meta property="og:image:secure_url" content={`${DOMAIN}/images/vinland-saga/chapter-${chapterNumber}/1.webp`} />
             <meta property="og:image:type" content="image/jpg" />
-            {/* <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /> */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         </Head >
     );
-
-
 
 
 
@@ -114,6 +113,13 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 ))}
             </div>
+
+            <div className='py-10 bg-[#0f0511]'>
+                <section className='max-w-[1000px] mx-auto px-5'>
+                    <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`Vinland Saga Chapter ${chapterNumber}`} />
+                </section>
+            </div>
+
             <Footer />
         </>
     );
