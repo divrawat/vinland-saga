@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import Link from "next/link";
 import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE } from "@/config";
 
@@ -17,7 +16,7 @@ export default function Home() {
       <Navbar />
       <article>
         <div className="flex md:mb-[60px] mb-5 pt-3 bg-[#000000] text-[white]">
-          <div className="w-2/5"><Image width={450} height={450} src={`${DOMAIN}/cover.webp`}></Image></div>
+          <div className="w-2/5"><img width={450} height={450} src={`${DOMAIN}/cover.webp`}></img></div>
           <div className="w-3/5 md:mr-10">
             <h1 className="text-center font-extrabold text-4xl my-5 uppercase">{MANGA_NAME}</h1>
             <p className="my-5 leading-[2] text-center" dangerouslySetInnerHTML={{ __html: MANGA_DESCRIPTION }} />
