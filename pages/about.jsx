@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { MANGA_NAME } from "@/config";
 import Head from "next/head";
+import { DOMAIN } from "@/config";
 
 const About = () => {
 
