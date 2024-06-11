@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG } from "@/config";
+import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG, RelatedMangaLinks } from "@/config";
 import Head from "next/head";
 
 export default function Home() {
@@ -81,6 +81,7 @@ export default function Home() {
     </Head >
   );
 
+  const filteredMangaLinks = RelatedMangaLinks.filter(item => item.link !== DOMAIN);
 
   return (
     <>
@@ -164,6 +165,39 @@ export default function Home() {
 
         </div>
 
+
+        <div className="max-w-[1000px] mx-auto p-4">
+          <h1 className="text-3xl font-bold mb-6 text-center">Read More Mangas</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredMangaLinks.map((item, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <a href={item.link} className="hover:underline">
+                  <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+                  <div className="p-4">
+                    <h2 className="text-2xl font-bold mb-2 text-center">{item.title}</h2>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="bg-[black] relative">
           <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}
           <div className="pt-10 pb-10 max-w-[1100px] mx-auto px-5 text-[white] relative z-10">
@@ -173,7 +207,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </article>
+      </article >
       <Footer />
     </>
   );

@@ -63,13 +63,13 @@ export const logo = <img src={`${LOGO_URL}`} alt="Logo" className="h-[75px] w-[1
 
 export const APP_NAME = 'Vinland Saga';
 export const NavbarName = "Vinland Saga";
+
 export const navLinks = [
     { text: 'Home', href: `${DOMAIN}` },
     { text: 'DMCA', href: `${DOMAIN}/dmca` },
     { text: 'Terms & Conditions', href: `${DOMAIN}/terms-and-conditions` },
 ];
 
-// Footer
 export const FooterLinks = [
     { text: 'About', href: `${DOMAIN}/about` },
     { text: 'Contact', href: `${DOMAIN}/contact` },
@@ -77,6 +77,48 @@ export const FooterLinks = [
     { text: 'Privacy Policy', href: `${DOMAIN}/privacy-policy` },
     { text: 'Terms & Conditions', href: `${DOMAIN}/terms-and-conditions` }
 ];
+
+
+export const RelatedMangaLinks = [
+    {
+        imageUrl: `${DOMAIN}/related/frieran.webp`,
+        title: 'Frieran',
+        link: '/',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/one-punch-man.webp`,
+        title: 'One Punch Man',
+        link: '/',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/vinland-saga.webp`,
+        title: 'Vinland Saga',
+        link: 'https://www.vinlandsagamanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/jujutsu-kaisen.webp`,
+        title: 'Jujutsu Kaisen',
+        link: '/',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/black-clover.webp`,
+        title: 'Black Clover',
+        link: '/',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/chainsaw-man.webp`,
+        title: 'Chainsaw Man',
+        link: '/',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/mushoku-tensei.webp`,
+        title: 'Mushoku Tensei',
+        link: '/',
+    },
+];
+
+
+
 
 export const chaptersData = [
     {
