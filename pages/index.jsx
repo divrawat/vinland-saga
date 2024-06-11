@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData } from "@/config";
+import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG } from "@/config";
 import Head from "next/head";
 
 export default function Home() {
@@ -89,7 +89,7 @@ export default function Home() {
       <article>
 
         <div className="md:flex md:mb-[60px] mb-5 pt-3 relative bg-[black]">
-          <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url('https://m.media-amazon.com/images/M/MV5BZTllZTBmNWItYWYyNC00ZWYwLWFmZWEtNDhmOTk0ZjdjYmRhXkEyXkFqcGdeQXVyMTM0NTgxMzc2._V1_.jpg')`, opacity: '0.25' }}></div>
+          <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${BEHIND_COVER_IMG})`, opacity: '0.25' }}></div>
 
           <div className="pt-3 md:w-2/5">
             <img className="mx-auto md:mx-0" width={450} height={450} src={`${COVER_IMG}`} alt="Manga Cover" />

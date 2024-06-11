@@ -21,6 +21,7 @@ export const URL_PREFIX = 'manga/vinland-saga-chapter';
 export const AUTHOR_PAGE = `${DOMAIN}/vinland-saga-team`;
 export const LOGO_URL = `${DOMAIN}/logo.webp`;
 export const COVER_IMG = `${DOMAIN}/cover.webp`;
+export const BEHIND_COVER_IMG = "https://m.media-amazon.com/images/M/MV5BZTllZTBmNWItYWYyNC00ZWYwLWFmZWEtNDhmOTk0ZjdjYmRhXkEyXkFqcGdeQXVyMTM0NTgxMzc2._V1_.jpg";
 
 
 

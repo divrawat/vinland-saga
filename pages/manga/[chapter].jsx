@@ -84,42 +84,44 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
         <>
             {head()}
             <Navbar />
-            <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} Chapter ${chapterNumber}`}</h1>
+            <article>
+                <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} Chapter ${chapterNumber}`}</h1>
 
-            <div className='mx-3 my-7'>
-                <div className="flex justify-between max-w-[800px] mx-auto md:mb-[50px] mt-5">
-                    {previousChapter !== null ? (
-                        <Link href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${previousChapter}`}>
-                            <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Previous Chapter</button>
-                        </Link>
-                    ) : (
-                        <button className="text-[white] text-[13px] rounded bg-[gray] px-2 py-2 font-semibold cursor-not-allowed" disabled>Previous Chapter</button>
-                    )}
+                <div className='mx-3 my-7'>
+                    <div className="flex justify-between max-w-[800px] mx-auto md:mb-[50px] mt-5">
+                        {previousChapter !== null ? (
+                            <Link href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${previousChapter}`}>
+                                <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Previous Chapter</button>
+                            </Link>
+                        ) : (
+                            <button className="text-[white] text-[13px] rounded bg-[gray] px-2 py-2 font-semibold cursor-not-allowed" disabled>Previous Chapter</button>
+                        )}
 
-                    {nextChapter !== null ? (
-                        <Link href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${nextChapter}`}>
-                            <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Next Chapter</button>
-                        </Link>
-                    ) : (
-                        <button className="text-[white] text-[13px] rounded bg-[gray] px-2 py-2 font-semibold cursor-not-allowed" disabled>Next Chapter</button>
-                    )}
+                        {nextChapter !== null ? (
+                            <Link href={`${DOMAIN}/${NEXT_PREVIOUS_PREFIX}-${nextChapter}`}>
+                                <button className="text-[white] text-[13px] hover:scale-105 active:scale-95 transition-transform rounded bg-[black] px-2 py-2 font-semibold">Next Chapter</button>
+                            </Link>
+                        ) : (
+                            <button className="text-[white] text-[13px] rounded bg-[gray] px-2 py-2 font-semibold cursor-not-allowed" disabled>Next Chapter</button>
+                        )}
 
-                </div>
-            </div>
-
-            <div className='max-w-[1200px] mx-auto mb-5'>
-                {imageUrls.map((imageUrl, index) => (
-                    <div className='allimages' key={index}>
-                        <img width={700} height={600} loading="lazy" src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
                     </div>
-                ))}
-            </div>
+                </div>
 
-            <div className='py-10 bg-[#0f0511]'>
-                <section className='max-w-[1000px] mx-auto px-5'>
-                    <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`${MANGA_NAME} Chapter ${chapterNumber}`} />
-                </section>
-            </div>
+                <div className='max-w-[1200px] mx-auto mb-5'>
+                    {imageUrls.map((imageUrl, index) => (
+                        <div className='allimages' key={index}>
+                            <img width={700} height={600} loading="lazy" src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
+                        </div>
+                    ))}
+                </div>
+
+                <div className='py-10 bg-[#0f0511]'>
+                    <section className='max-w-[1000px] mx-auto px-5'>
+                        <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`${MANGA_NAME} Chapter ${chapterNumber}`} />
+                    </section>
+                </div>
+            </article>
 
             <Footer />
         </>
@@ -135,7 +137,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const chapterParam = params.chapter;
-    const chapterNumber = chapterParam.split("vinland-saga-chapter-")[1];
+    const chapterNumber = chapterParam.split(`${CHAPTER_PREFIX}-`)[1];
 
     if (chapterNumber === undefined) { return { props: { errorcode: true } }; }
 
