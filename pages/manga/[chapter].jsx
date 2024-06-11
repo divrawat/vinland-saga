@@ -26,7 +26,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
     const nextChapter = chapterIndex < totalChapters - 1 ? chaptersData[chapterIndex + 1].chapterNumber : null;
 
 
-    const DESCRIPTION = `You are currently enjoying reading ${MANGA_NAME} chapter ${chapterNumber} online at ${DOMAIN}.`
+    const DESCRIPTION = `Enjoy reading ${MANGA_NAME} chapter ${chapterNumber} online at ${DOMAIN}.`
     const URL = params.chapter;
     const currentDate = new Date();
     const dateModified = new Date(currentDate.getTime() - (2 * 24 * 60 * 60 * 1000)).toISOString();

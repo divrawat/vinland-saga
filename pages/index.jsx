@@ -65,10 +65,10 @@ export default function Home() {
 
   const head = () => (
     <Head>
-      <title>{`Read ${MANGA_NAME} Manga For Free`}</title>
+      <title>{`Read ${MANGA_NAME} Manga Online`}</title>
       <meta name="description" content={APP_DESCRIPTION} />
       <link rel="canonical" href={`${DOMAIN}`} />
-      <meta property="og:title" content={`Read ${MANGA_NAME} Manga For Free`} />
+      <meta property="og:title" content={`Read ${MANGA_NAME} Manga Online`} />
       <meta property="og:description" content={APP_DESCRIPTION} />
       <meta property="og:type" content="webiste" />
       <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
@@ -166,7 +166,8 @@ export default function Home() {
         </div>
 
 
-        <div className="max-w-[1000px] mx-auto p-4">
+
+        {/* <div className="max-w-[1000px] mx-auto p-4">
           <h1 className="text-3xl font-bold mb-6 text-center">Read More Mangas</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredMangaLinks.map((item, index) => (
@@ -180,7 +181,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
 

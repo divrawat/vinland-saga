@@ -83,12 +83,12 @@ export const RelatedMangaLinks = [
     {
         imageUrl: `${DOMAIN}/related/frieran.webp`,
         title: 'Frieran',
-        link: '/',
+        link: 'https://www.frieranmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/one-punch-man.webp`,
         title: 'One Punch Man',
-        link: '/',
+        link: 'https://www.onepunchmanmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/vinland-saga.webp`,
@@ -98,22 +98,22 @@ export const RelatedMangaLinks = [
     {
         imageUrl: `${DOMAIN}/related/jujutsu-kaisen.webp`,
         title: 'Jujutsu Kaisen',
-        link: '/',
+        link: 'https://www.jujutsukaisenmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/black-clover.webp`,
         title: 'Black Clover',
-        link: '/',
+        link: 'https://www.blackclovermanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/chainsaw-man.webp`,
         title: 'Chainsaw Man',
-        link: '/',
+        link: 'https://www.chainsawmanmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/mushoku-tensei.webp`,
         title: 'Mushoku Tensei',
-        link: '/',
+        link: 'https://www.mushokutenseimanga.in.net',
     },
 ];
 

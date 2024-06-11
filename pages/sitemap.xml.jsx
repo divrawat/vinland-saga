@@ -2,7 +2,7 @@ import { DOMAIN, chaptersData } from "../config";
 import { format } from 'date-fns';
 
 const generateXmlSitemap = () => {
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>${DOMAIN}</loc>
@@ -10,30 +10,29 @@ const generateXmlSitemap = () => {
       <changefreq>weekly</changefreq>
     </url>`;
 
-    chaptersData.forEach((chapter, index) => {
-        const chapterNumber = chapter.chapterNumber;
-        const url = `${DOMAIN}/vinland-saga-chapter-${chapterNumber}`;
-        const today = new Date();
-        const chapterDate = format(new Date(today.getTime() + (index * 24 * 60 * 60 * 1000)), "yyyy-MM-dd");
-        xml += `
+  chaptersData.forEach((chapter, index) => {
+    const chapterNumber = chapter.chapterNumber;
+    const url = `${DOMAIN}/vinland-saga-chapter-${chapterNumber}`;
+    const today = new Date();
+    const chapterDate = format(new Date(today.getTime() + (index * 24 * 60 * 60 * 1000)), "yyyy-MM-dd");
+    xml += `
       <url>
         <loc>${url}</loc>
-        <lastmod>${chapterDate}</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
       </url>`;
-    });
-    xml += '</urlset>';
-    return xml;
+  });
+  xml += '</urlset>';
+  return xml;
 };
 
 
 export async function getServerSideProps({ res }) {
-    res.setHeader('Content-Type', 'text/xml');
-    res.write(generateXmlSitemap());
-    res.end();
+  res.setHeader('Content-Type', 'text/xml');
+  res.write(generateXmlSitemap());
+  res.end();
 
-    return { props: {} };
+  return { props: {} };
 }
 
 
