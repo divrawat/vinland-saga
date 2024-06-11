@@ -1,19 +1,39 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY } from "@/config";
+import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData } from "@/config";
 import Head from "next/head";
 
 export default function Home() {
-  const chapters = Array.from({ length: 211 }, (_, i) => ({
-    number: i + 1,
-    url: `${DOMAIN}/manga/vinland-saga-chapter-${i + 1}`
-  })).reverse();
+
+  const sortedChapters = chaptersData.sort((a, b) => {
+    const aParts = a.chapterNumber.match(/(\d+)([a-z]*)/);
+    const bParts = b.chapterNumber.match(/(\d+)([a-z]*)/);
+    const aNumber = parseInt(aParts[1], 10);
+    const bNumber = parseInt(bParts[1], 10);
+
+    if (aNumber === bNumber) {
+      return aParts[2].localeCompare(bParts[2]);
+    }
+    return aNumber - bNumber;
+  }).reverse();
+
+
+  const chapters = sortedChapters.map((chapter) => ({
+    number: chapter.chapterNumber,
+    url: `${DOMAIN}/${URL_PREFIX}-${chapter.chapterNumber}`
+  }));
+
+
+
+
+
 
   const genres = MANGA_GENRE.split(', ');
   const currentDate = new Date();
   const dateModified = new Date(currentDate.getTime() - (3 * 24 * 60 * 60 * 1000)).toISOString();
   const datePublished = new Date(currentDate.getTime() - (4 * 24 * 60 * 60 * 1000)).toISOString();
+
 
   const schema =
   {
@@ -25,18 +45,18 @@ export default function Home() {
     },
     "headline": `${MANGA_NAME} Manga`,
     "description": `${APP_DESCRIPTION}`,
-    "image": `${DOMAIN}/cover.webp`,
+    "image": `${COVER_IMG}`,
     "author": {
       "@type": "Person",
-      "name": `Vinland Saga Team`,
-      "url": `${DOMAIN}/vinland-saga-team`
+      "name": `${MANGA_NAME} Team`,
+      "url": `${AUTHOR_PAGE}`
     },
     "publisher": {
       "@type": "Person",
-      "name": { APP_NAME },
+      "name": `${APP_NAME}`,
       "logo": {
         "@type": "ImageObject",
-        "url": `${DOMAIN}/logo.jpg}`
+        "url": `${LOGO_URL}`
       }
     },
     "datePublished": datePublished,
@@ -54,8 +74,8 @@ export default function Home() {
       <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
       <meta property="og:url" content={`${DOMAIN}`} />
       <meta property="og:site_name" content={`${APP_NAME}`} />
-      <meta property="og:image" content={`${DOMAIN}/cover.webp`} />
-      <meta property="og:image:secure_url" content={`${DOMAIN}/cover.webp`} />
+      <meta property="og:image" content={`${COVER_IMG}`} />
+      <meta property="og:image:secure_url" content={`${COVER_IMG}`} />
       <meta property="og:image:type" content="image/jpg" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </Head >
@@ -72,7 +92,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url('https://m.media-amazon.com/images/M/MV5BZTllZTBmNWItYWYyNC00ZWYwLWFmZWEtNDhmOTk0ZjdjYmRhXkEyXkFqcGdeQXVyMTM0NTgxMzc2._V1_.jpg')`, opacity: '0.25' }}></div>
 
           <div className="pt-3 md:w-2/5">
-            <img className="mx-auto md:mx-0" width={450} height={450} src={`${DOMAIN}/cover.webp`} alt="Manga Cover" />
+            <img className="mx-auto md:mx-0" width={450} height={450} src={`${COVER_IMG}`} alt="Manga Cover" />
           </div>
 
           <div className="md:w-3/5 md:mr-10  text-white p-5 relative z-10">
@@ -134,16 +154,15 @@ export default function Home() {
 
           {chapters.map((chapter) => (
             <div className="flex hover:scale-105 active:scale-95 transition-transform" key={chapter.number}>
-              <Link href={chapter.url} className="p-5 hover:underline">
+              <a href={chapter.url} className="p-5 hover:underline">
                 <p className="w-[300px] text-center p-5 border border-l-8 border-[black] font-bold break-words">
-                  {`Vinland Saga, Chapter ${chapter.number}`}
+                  {`${MANGA_NAME}, Chapter ${chapter.number}`}
                 </p>
-              </Link>
+              </a>
             </div>
           ))}
 
         </div>
-
 
         <div className="bg-[black] relative">
           <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}
@@ -154,9 +173,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-
-
-
       </article>
       <Footer />
     </>
