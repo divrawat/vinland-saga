@@ -86,6 +86,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             <Navbar />
             <article>
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} Chapter ${chapterNumber}`}</h1>
+                <p className='text-center px-4'>You are reading {MANGA_NAME} <b>Chapter {chapterNumber}</b></p>
 
                 <div className='mx-3 my-7'>
                     <div className="flex justify-between max-w-[800px] mx-auto md:mb-[50px] mt-5">
@@ -117,6 +118,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                 </div>
 
                 <div className='py-10 bg-[#0f0511]'>
+                    <h2 className='text-4xl text-center text-[white] font-blod px-4 mb-10'>Comment Section</h2>
                     <section className='max-w-[1000px] mx-auto px-5'>
                         <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`${MANGA_NAME} Chapter ${chapterNumber}`} />
                     </section>

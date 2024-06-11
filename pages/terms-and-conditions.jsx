@@ -27,11 +27,11 @@ const TermsCondition = () => {
 
 
                 <h2 className="text-2xl font-bold my-8">Intellectual Property</h2>
-                <p className="my-8 leading-[2]">The content, materials, and information displayed on the Website, including but not limited to text, graphics, images, logos, and software, are not the intellectual property of https://thejujutsukaisen.com/ or its licensors. You may not reproduce, distribute, modify, display, or exploit any of the content without the written consent of the original owners.</p>
+                <p className="my-8 leading-[2]">The content, materials, and information displayed on the Website, including but not limited to text, graphics, images, logos, and software, are not the intellectual property of {DOMAIN} or its licensors. You may not reproduce, distribute, modify, display, or exploit any of the content without the written consent of the original owners.</p>
 
 
                 <h2 className="text-2xl font-bold my-8">User Content</h2>
-                <p className="my-8 leading-[2]">By submitting or posting any content, including comments, reviews, or media files, on the Website, you grant https://thejujutsukaisen.com/ a non-exclusive, royalty-free, worldwide, perpetual, and irrevocable right to use, reproduce, modify, adapt, publish, translate, distribute, and display such content for any purpose related to the operation of the Website. You are solely responsible for the content you submit, and you represent that you have all the necessary rights to grant us these rights.</p>
+                <p className="my-8 leading-[2]">By submitting or posting any content, including comments, reviews, or media files, on the Website, you grant {DOMAIN} a non-exclusive, royalty-free, worldwide, perpetual, and irrevocable right to use, reproduce, modify, adapt, publish, translate, distribute, and display such content for any purpose related to the operation of the Website. You are solely responsible for the content you submit, and you represent that you have all the necessary rights to grant us these rights.</p>
 
 
                 <h2 className="text-2xl font-bold my-8">Backups</h2>
@@ -45,7 +45,7 @@ const TermsCondition = () => {
 
 
                 <h2 className="text-2xl font-bold my-8">Prohibited Uses</h2>
-                <p className="my-8 leading-[2]">By accessing or using https://thejujutsukaisen.com/, you agree not to engage in any of the following prohibited activities:</p>
+                <p className="my-8 leading-[2]">By accessing or using {DOMAIN}, you agree not to engage in any of the following prohibited activities:</p>
 
                 <h2 className="text-2xl font-bold my-8">Violation of Laws</h2>
                 <p className="my-8 leading-[2]">Using the Website in any way that violates applicable local, national, or international laws, regulations, or statutes is strictly prohibited.</p>
