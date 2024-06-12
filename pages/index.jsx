@@ -148,7 +148,7 @@ export default function Home() {
 
 
         <h2 id="readmanga" className="font-extrabold text-3xl my-10 px-4 text-center">
-          <Link href={DOMAIN} className="hover:underline">{`Read ${MANGA_NAME} Chapters Online`}</Link>
+          <Link href={DOMAIN} className="hover:underline">{`Read ${MANGA_NAME} Manga Online`}</Link>
         </h2>
 
         <div className="mt-10 max-w-[1100px] mb-10 mx-auto px-5 flex flex-wrap justify-center">
