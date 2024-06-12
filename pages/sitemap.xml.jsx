@@ -1,4 +1,4 @@
-import { DOMAIN, chaptersData } from "../config";
+import { DOMAIN, chaptersData, URL_PREFIX } from "../config";
 import { format } from 'date-fns';
 
 const generateXmlSitemap = () => {
@@ -12,7 +12,7 @@ const generateXmlSitemap = () => {
 
   chaptersData.forEach((chapter, index) => {
     const chapterNumber = chapter.chapterNumber;
-    const url = `${DOMAIN}/vinland-saga-chapter-${chapterNumber}`;
+    const url = `${DOMAIN}/${URL_PREFIX}-${chapterNumber}`;
     const today = new Date();
     const chapterDate = format(new Date(today.getTime() + (index * 24 * 60 * 60 * 1000)), "yyyy-MM-dd");
     xml += `
