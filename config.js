@@ -1,6 +1,6 @@
 
-// export const DOMAIN = 'http://localhost:3000';
-export const DOMAIN = 'https://www.vinlandsagamanga.in.net';
+export const DOMAIN = 'http://localhost:3000';
+// export const DOMAIN = 'https://www.vinlandsagamanga.in.net';
 
 
 export const MANGA_DESCRIPTION = `Set in the Viking era, this manga follows Thorfinn's quest for revenge and his dream of finding the legendary land of Vinland. Filled with action and historical drama, <a href="${DOMAIN}"><u>Vinland Saga</u></a> is a thrilling story about battles, honor, and the search for peace. Perfect for fans of exciting, historical tales. Experience the gripping adventures of Thorfinn as he navigates through the tumultuous Viking world, facing formidable challenges and discovering his own path to redemption.`;
