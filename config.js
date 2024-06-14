@@ -25,7 +25,7 @@ export const BEHIND_COVER_IMG = "https://m.media-amazon.com/images/M/MV5BZTllZTB
 
 
 
-export const APP_DESCRIPTION = `Read Vinland Saga manga online at "${DOMAIN}". Enjoy high-quality scans, latest chapters, and connect with fans in our vibrant community. Dive into the epic Viking adventure today!`;
+export const APP_DESCRIPTION = `Read Vinland Saga manga online at ${DOMAIN}. Enjoy high-quality scans, latest chapters, and connect with fans in our vibrant community. Dive into the epic Viking adventure today!`;
 
 export const DISQUS_SHORTNAME = "my-cms-7";
 
