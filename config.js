@@ -530,7 +530,7 @@ export const chaptersData = [
     },
     {
         "chapterNumber": "99",
-        "numImages": 18
+        "numImages": 20
     },
     {
         "chapterNumber": "100",
