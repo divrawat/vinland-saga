@@ -25,7 +25,7 @@ export const BEHIND_COVER_IMG = "https://m.media-amazon.com/images/M/MV5BZTllZTB
 
 
 
-export const APP_DESCRIPTION = `Read Vinland Saga manga online at ${DOMAIN}. Enjoy high-quality scans, latest chapters, and connect with fans in our vibrant community. Dive into the epic Viking adventure today!`;
+export const APP_DESCRIPTION = `Read Vinland Saga manga online at ${DOMAIN}. Enjoy high-quality scans, latest chapters, and connect with fans in our vibrant community. It is a gripping manga and anime series that plunges viewers into the tumultuous world of Vikings during the Viking Age. At its core is the compelling story of Thorfinn, a young boy whose life is shattered when his father, Thors, a renowned warrior, is killed. Driven by an unquenchable thirst for vengeance, Thorfinn embarks on a perilous journey to avenge his father's death.`;
 
 export const DISQUS_SHORTNAME = "my-cms-7";
 
@@ -82,39 +82,83 @@ export const FooterLinks = [
 export const RelatedMangaLinks = [
     {
         imageUrl: `${DOMAIN}/related/frieran.webp`,
-        title: 'Frieran',
-        link: 'https://www.frieranmanga.in.net',
+        title: 'Frieran Manga',
+        link: 'https://www.frierenmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/one-punch-man.webp`,
-        title: 'One Punch Man',
+        title: 'One Punch Man Manga',
         link: 'https://www.onepunchmanmanga.in.net',
     },
     {
-        imageUrl: `${DOMAIN}/related/vinland-saga.webp`,
-        title: 'Vinland Saga',
-        link: 'https://www.vinlandsagamanga.in.net',
-    },
-    {
         imageUrl: `${DOMAIN}/related/jujutsu-kaisen.webp`,
-        title: 'Jujutsu Kaisen',
+        title: 'Jujutsu Kaisen Manga',
         link: 'https://www.jujutsukaisenmanga.in.net',
     },
     {
-        imageUrl: `${DOMAIN}/related/black-clover.webp`,
-        title: 'Black Clover',
-        link: 'https://www.blackclovermanga.in.net',
-    },
-    {
         imageUrl: `${DOMAIN}/related/chainsaw-man.webp`,
-        title: 'Chainsaw Man',
+        title: 'Chainsaw Man Manga',
         link: 'https://www.chainsawmanmanga.in.net',
     },
     {
         imageUrl: `${DOMAIN}/related/mushoku-tensei.webp`,
-        title: 'Mushoku Tensei',
+        title: 'Mushoku Tensei Manga',
         link: 'https://www.mushokutenseimanga.in.net',
     },
+    {
+        imageUrl: `${DOMAIN}/related/one-piece.webp`,
+        title: 'One Piece Manga',
+        link: 'https://www.onepiecemanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/jinx.webp`,
+        title: 'Jinx Manga',
+        link: 'https://www.jinxmanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/boruto.webp`,
+        title: 'Boruto Manga',
+        link: 'https://www.borutomanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/demon-slayer.webp`,
+        title: 'Demon Slayer Manga',
+        link: 'https://www.demonslayermanga.in.net',
+    },
+
+    /*
+    {
+        imageUrl: `${DOMAIN}/related/my-dress-up-darling.webp`,
+        title: 'My Dress Up Darling Manga',
+        link: 'https://www.mydressupdarlingmanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/blue-lock.webp`,
+        title: 'Blue Lock Manga',
+        link: 'https://www.bluelockmanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/solo-leveling.webp`,
+        title: 'Solo Leveling Manga',
+        link: 'https://www.sololevelingimanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/my-hero-academia.webp`,
+        title: 'My Hero Academia Manga',
+        link: 'https://www.myheroacademiamanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/vinland-saga.webp`,
+        title: 'Vinland Saga Manga',
+        link: 'https://www.vinlandsagamanga.in.net',
+    },
+    {
+        imageUrl: `${DOMAIN}/related/black-clover.webp`,
+        title: 'Black Clover Manga',
+        link: 'https://www.blackclovermanga.in.net',
+    },
+*/
+
 ];
 
 
