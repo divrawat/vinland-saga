@@ -2,7 +2,7 @@ import { DOMAIN } from "../config";
 
 const generateRobotsTxt = () => {
     let robotsTxtContent = `User-agent: *
-Disallow:
+Disallow: /images/
 Sitemap: ${DOMAIN}/sitemap.xml
 `;
     return robotsTxtContent;
